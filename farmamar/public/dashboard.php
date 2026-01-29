@@ -547,6 +547,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <i class="fas fa-user-circle"></i> 
                 <strong><?php echo safeText($_SESSION['user_name']); ?></strong>
                 <br>
+                <a href="reportes.php" class="logout-btn" style="margin-right: 12px;"><i class="fas fa-file-alt"></i> <?php echo safeText('Reportes'); ?></a>
+                <a href="reportes.php?diario=1" class="logout-btn" style="background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 6px;"><i class="fas fa-calendar-day"></i> <?php echo safeText('Reporte de hoy'); ?></a>
+                <br>
                 <a href="../logout.php" class="logout-btn">
                     <i class="fas fa-sign-out-alt"></i> <?php echo safeText('Cerrar Sesión'); ?>
                 </a>
@@ -584,6 +587,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
                 <div class="stat-label">Estado API</div>
             </div>
+        </div>
+
+        <!-- Navegación rápida: Reportes -->
+        <div style="background: var(--light); padding: 10px 24px; border-bottom: 1px solid #dee2e6; display: flex; align-items: center; gap: 16px;">
+            <a href="dashboard.php" style="color: var(--dark); text-decoration: none; font-weight: 500;"><i class="fas fa-home"></i> Inicio</a>
+            <a href="reportes.php" style="color: var(--primary); text-decoration: none; font-weight: 600;"><i class="fas fa-file-alt"></i> Reportes</a>
+            <a href="reportes.php?diario=1" style="color: var(--secondary); text-decoration: none; font-weight: 500;"><i class="fas fa-calendar-day"></i> Reporte diario de hoy</a>
         </div>
 
         <!-- Main Content -->
