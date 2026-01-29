@@ -15,14 +15,50 @@ $transacciones = [];
 $totalMonto = 0;
 $fechaInicio = date('Y-m-d');
 $fechaFin = date('Y-m-d');
+$fechaOperacionInicio = '';
+$fechaOperacionFin = '';
 $reporteGenerado = false;
+
+// Reporte diario: si viene ?diario=1, prellenar solo hoy (y opcionalmente auto-enviar en JS)
+$autoReporteDiario = !empty($_GET['diario']) && $_SERVER['REQUEST_METHOD'] !== 'POST';
+if (!empty($_GET['diario'])) {
+    $fechaInicio = date('Y-m-d');
+    $fechaFin = date('Y-m-d');
+}
+
+// Cargar lista de usuarios (para filtro "usuario que verificó")
+$usuarios = [];
+try {
+    $stmtUsu = $pdo->query("SELECT CodUsua, Descrip FROM SSUSRS ORDER BY Descrip");
+    $usuarios = $stmtUsu->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    // Si no existe SSUSRS o falla, se usa solo el usuario actual
+}
 
 // Procesar filtros
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $fechaInicio = $_POST['fecha_inicio'] ?? date('Y-m-d');
     $fechaFin = $_POST['fecha_fin'] ?? date('Y-m-d');
-    $cedula = $_POST['cedula'] ?? '';
-    $referencia = $_POST['referencia'] ?? '';
+    $fechaOperacionInicio = trim($_POST['fecha_operacion_inicio'] ?? '');
+    $fechaOperacionFin = trim($_POST['fecha_operacion_fin'] ?? '');
+    $cedula = trim($_POST['cedula'] ?? '');
+    $referencia = trim($_POST['referencia'] ?? '');
+    $usuarioId = trim($_POST['usuario_id'] ?? '');
+    
+    // Por defecto: solo datos del usuario logueado. Si eligió otro usuario (y está en la lista), filtrar por ese.
+    $filtrarUsuarioId = $_SESSION['user_id'];
+    if ($usuarioId !== '' && $usuarioId !== (string)$_SESSION['user_id']) {
+        $existe = false;
+        foreach ($usuarios as $u) {
+            if ((string)$u['CodUsua'] === $usuarioId) {
+                $existe = true;
+                break;
+            }
+        }
+        if ($existe) {
+            $filtrarUsuarioId = $usuarioId;
+        }
+    }
     
     // Construir consulta
     $sql = "SELECT 
@@ -43,18 +79,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             AND DATE(fecha_verificacion) BETWEEN :fecha_inicio AND :fecha_fin";
     
     $params = [
-        ':usuario_id' => $_SESSION['user_id'],
+        ':usuario_id' => $filtrarUsuarioId,
         ':fecha_inicio' => $fechaInicio,
         ':fecha_fin' => $fechaFin
     ];
     
-    // Aplicar filtros adicionales
-    if (!empty($cedula)) {
+    // Filtro por fecha de operación (fecha_transaccion)
+    if ($fechaOperacionInicio !== '') {
+        $sql .= " AND DATE(fecha_transaccion) >= :fecha_operacion_inicio";
+        $params[':fecha_operacion_inicio'] = $fechaOperacionInicio;
+    }
+    if ($fechaOperacionFin !== '') {
+        $sql .= " AND DATE(fecha_transaccion) <= :fecha_operacion_fin";
+        $params[':fecha_operacion_fin'] = $fechaOperacionFin;
+    }
+    
+    if ($cedula !== '') {
         $sql .= " AND cedula_cliente LIKE :cedula";
         $params[':cedula'] = "%$cedula%";
     }
     
-    if (!empty($referencia)) {
+    if ($referencia !== '') {
         $sql .= " AND referencia LIKE :referencia";
         $params[':referencia'] = "%$referencia%";
     }
@@ -65,6 +110,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->execute($params);
     $transacciones = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
+    // Nombre del usuario del reporte (para resumen y PDF)
+    $nombreUsuarioReporte = $_SESSION['user_name'];
+    if ($filtrarUsuarioId !== $_SESSION['user_id']) {
+        foreach ($usuarios as $u) {
+            if ((string)$u['CodUsua'] === (string)$filtrarUsuarioId) {
+                $nombreUsuarioReporte = $u['Descrip'];
+                break;
+            }
+        }
+    }
+    
     // Calcular totales
     foreach ($transacciones as $trans) {
         $totalMonto += $trans['monto'];
@@ -72,10 +128,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     $reporteGenerado = true;
     
+    // Registrar en reportes_usuarios (historial de reportes generados)
+    try {
+        $parametrosBusqueda = json_encode([
+            'fecha_inicio' => $fechaInicio,
+            'fecha_fin' => $fechaFin,
+            'fecha_operacion_inicio' => $fechaOperacionInicio,
+            'fecha_operacion_fin' => $fechaOperacionFin,
+            'referencia' => $referencia,
+            'cedula' => $cedula,
+            'usuario_filtro_id' => $filtrarUsuarioId
+        ], JSON_UNESCAPED_UNICODE);
+        $stmtReg = $pdo->prepare("INSERT INTO reportes_usuarios 
+            (usuario_id, fecha_inicio, fecha_fin, total_transacciones, monto_total, parametros_busqueda) 
+            VALUES (:usuario_id, :fecha_inicio, :fecha_fin, :total_transacciones, :monto_total, :parametros_busqueda)");
+        $stmtReg->execute([
+            ':usuario_id' => $_SESSION['user_id'],
+            ':fecha_inicio' => $fechaInicio,
+            ':fecha_fin' => $fechaFin,
+            ':total_transacciones' => count($transacciones),
+            ':monto_total' => $totalMonto,
+            ':parametros_busqueda' => $parametrosBusqueda
+        ]);
+    } catch (PDOException $e) {
+        // No fallar la página si la tabla no existe o hay error de FK
+        error_log("Reportes: no se pudo registrar en reportes_usuarios: " . $e->getMessage());
+    }
+    
     // Generar PDF si se solicita
     if (isset($_POST['generar_pdf'])) {
         require_once '../includes/pdf_generator.php';
-        generarPDFReporte($transacciones, $_SESSION['user_name'], $fechaInicio, $fechaFin, $totalMonto);
+        generarPDFReporte($transacciones, $nombreUsuarioReporte, $fechaInicio, $fechaFin, $totalMonto);
         exit;
     }
 }
@@ -316,37 +399,65 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
                 <div class="card-body">
                     <form method="POST">
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                        <p style="margin-bottom: 15px; color: #6c757d; font-size: 14px;">
+                            <i class="fas fa-info-circle"></i> Filtre por <strong>fecha de verificación</strong>, <strong>fecha de operación</strong>, <strong>número de referencia</strong> o <strong>usuario que verificó</strong> para generar su reporte diario o por período.
+                        </p>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
                             <div class="form-group">
-                                <label for="fecha_inicio"><i class="fas fa-calendar-alt"></i> Fecha Inicio</label>
+                                <label for="fecha_inicio"><i class="fas fa-calendar-check"></i> Fecha verificación desde</label>
                                 <input type="date" id="fecha_inicio" name="fecha_inicio" 
-                                       value="<?php echo $fechaInicio; ?>" class="form-control" required>
+                                       value="<?php echo htmlspecialchars($fechaInicio); ?>" class="form-control" required>
                             </div>
-                            
                             <div class="form-group">
-                                <label for="fecha_fin"><i class="fas fa-calendar-alt"></i> Fecha Fin</label>
+                                <label for="fecha_fin"><i class="fas fa-calendar-check"></i> Fecha verificación hasta</label>
                                 <input type="date" id="fecha_fin" name="fecha_fin" 
-                                       value="<?php echo $fechaFin; ?>" class="form-control" required>
+                                       value="<?php echo htmlspecialchars($fechaFin); ?>" class="form-control" required>
                             </div>
-                            
+                            <div class="form-group">
+                                <label for="fecha_operacion_inicio"><i class="fas fa-calendar-alt"></i> Fecha operación desde (opcional)</label>
+                                <input type="date" id="fecha_operacion_inicio" name="fecha_operacion_inicio" 
+                                       value="<?php echo htmlspecialchars($fechaOperacionInicio); ?>" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="fecha_operacion_fin"><i class="fas fa-calendar-alt"></i> Fecha operación hasta (opcional)</label>
+                                <input type="date" id="fecha_operacion_fin" name="fecha_operacion_fin" 
+                                       value="<?php echo htmlspecialchars($fechaOperacionFin); ?>" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="referencia"><i class="fas fa-hashtag"></i> Número de referencia (opcional)</label>
+                                <input type="text" id="referencia" name="referencia" 
+                                       value="<?php echo htmlspecialchars($_POST['referencia'] ?? ''); ?>"
+                                       placeholder="Ej: 123456" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="usuario_id"><i class="fas fa-user-check"></i> Usuario que verificó</label>
+                                <select id="usuario_id" name="usuario_id" class="form-control">
+                                    <option value="">Mi usuario (<?php echo htmlspecialchars($_SESSION['user_name']); ?>)</option>
+                                    <?php foreach ($usuarios as $u): 
+                                        if ((string)$u['CodUsua'] === (string)$_SESSION['user_id']) continue;
+                                        $sel = (isset($_POST['usuario_id']) && $_POST['usuario_id'] === (string)$u['CodUsua']) ? ' selected' : '';
+                                    ?>
+                                    <option value="<?php echo htmlspecialchars($u['CodUsua']); ?>"<?php echo $sel; ?>>
+                                        <?php echo htmlspecialchars($u['Descrip']); ?>
+                                    </option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
                             <div class="form-group">
                                 <label for="cedula"><i class="fas fa-id-card"></i> Cédula (opcional)</label>
                                 <input type="text" id="cedula" name="cedula" 
+                                       value="<?php echo htmlspecialchars($_POST['cedula'] ?? ''); ?>"
                                        placeholder="Buscar por cédula" class="form-control">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="referencia"><i class="fas fa-hashtag"></i> Referencia (opcional)</label>
-                                <input type="text" id="referencia" name="referencia" 
-                                       placeholder="Buscar por referencia" class="form-control">
                             </div>
                         </div>
                         
-                        <div style="display: flex; gap: 10px; margin-top: 20px;">
+                        <div style="display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap;">
                             <button type="submit" name="generar_reporte" class="btn btn-primary">
                                 <i class="fas fa-search"></i> Generar Reporte
                             </button>
-                            
+                            <a href="reportes.php?diario=1" class="btn btn-primary" style="text-decoration: none; display: inline-flex; align-items: center;">
+                                <i class="fas fa-calendar-day"></i> Reporte de hoy
+                            </a>
                             <?php if ($reporteGenerado && !empty($transacciones)): ?>
                             <button type="submit" name="generar_pdf" class="btn btn-success">
                                 <i class="fas fa-file-pdf"></i> Exportar a PDF
@@ -361,6 +472,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <!-- Resumen del reporte -->
                 <div class="summary-card">
                     <h3>Resumen del Reporte</h3>
+                    <?php if (isset($nombreUsuarioReporte) && $nombreUsuarioReporte !== $_SESSION['user_name']): ?>
+                    <p style="margin: 0 0 12px 0; opacity: 0.95;"><i class="fas fa-user-check"></i> Usuario que verificó: <strong><?php echo htmlspecialchars($nombreUsuarioReporte); ?></strong></p>
+                    <?php endif; ?>
                     <div class="summary-stats">
                         <div class="stat-item">
                             <div class="stat-value"><?php echo count($transacciones); ?></div>
@@ -372,11 +486,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </div>
                         <div class="stat-item">
                             <div class="stat-value"><?php echo $fechaInicio; ?></div>
-                            <div class="stat-label">Desde</div>
+                            <div class="stat-label">Verif. desde</div>
                         </div>
                         <div class="stat-item">
                             <div class="stat-value"><?php echo $fechaFin; ?></div>
-                            <div class="stat-label">Hasta</div>
+                            <div class="stat-label">Verif. hasta</div>
                         </div>
                     </div>
                 </div>
@@ -452,24 +566,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
     
     <script>
-        // Validación de fechas
         document.addEventListener('DOMContentLoaded', function() {
             const fechaInicio = document.getElementById('fecha_inicio');
             const fechaFin = document.getElementById('fecha_fin');
-            
-            // Establecer fecha máxima como hoy
             const today = new Date().toISOString().split('T')[0];
-            fechaInicio.max = today;
-            fechaFin.max = today;
-            
-            // Validar que fecha inicio no sea mayor a fecha fin
-            fechaInicio.addEventListener('change', function() {
-                fechaFin.min = this.value;
-            });
-            
-            fechaFin.addEventListener('change', function() {
-                fechaInicio.max = this.value;
-            });
+            if (fechaInicio) fechaInicio.max = today;
+            if (fechaFin) fechaFin.max = today;
+            if (fechaInicio) fechaInicio.addEventListener('change', function() { fechaFin.min = this.value; });
+            if (fechaFin) fechaFin.addEventListener('change', function() { fechaInicio.max = this.value; });
+
+            // Reporte de hoy: auto-enviar el formulario si se entró con ?diario=1 (solo primera carga)
+            <?php if (!empty($autoReporteDiario)): ?>
+            (function() {
+                var form = document.querySelector('form[method="POST"]');
+                if (form && fechaInicio && fechaFin) {
+                    fechaInicio.value = today;
+                    fechaFin.value = today;
+                    form.submit();
+                }
+            })();
+            <?php endif; ?>
         });
     </script>
 </body>
