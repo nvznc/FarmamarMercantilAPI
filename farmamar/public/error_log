@@ -1,0 +1,429 @@
+[28-Jan-2026 18:29:29 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in /home2/atlasori/public_html/farmamar/public/login.php:15
+Stack trace:
+#0 /home2/atlasori/public_html/farmamar/public/login.php(15): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home2/atlasori/public_html/farmamar/public/login.php on line 15
+[28-Jan-2026 18:30:16 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in /home2/atlasori/public_html/farmamar/public/login.php:15
+Stack trace:
+#0 /home2/atlasori/public_html/farmamar/public/login.php(15): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home2/atlasori/public_html/farmamar/public/login.php on line 15
+[28-Jan-2026 18:31:15 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in /home2/atlasori/public_html/farmamar/public/login.php:15
+Stack trace:
+#0 /home2/atlasori/public_html/farmamar/public/login.php(15): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home2/atlasori/public_html/farmamar/public/login.php on line 15
+[28-Jan-2026 19:45:24 America/Caracas] PHP Warning:  Undefined array key "user_name" in /home2/atlasori/public_html/farmamar/public/dashboard.php on line 33
+[28-Jan-2026 19:45:44 America/Caracas] PHP Warning:  Undefined array key "user_name" in /home2/atlasori/public_html/farmamar/public/dashboard.php on line 33
+[28-Jan-2026 19:50:04 America/Caracas] PHP Warning:  Undefined array key "user_name" in /home2/atlasori/public_html/farmamar/public/dashboard.php on line 33
+[28-Jan-2026 19:50:21 America/Caracas] PHP Warning:  Undefined array key "user_name" in /home2/atlasori/public_html/farmamar/public/dashboard.php on line 33
+[28-Jan-2026 19:52:44 America/Caracas] PHP Warning:  Undefined array key "user_name" in /home2/atlasori/public_html/farmamar/public/dashboard.php on line 33
+[28-Jan-2026 20:17:56 America/Caracas] HTTP Code: 200
+[28-Jan-2026 20:17:56 America/Caracas] Headers: HTTP/1.1 200 OK
+Date: Thu, 29 Jan 2026 00:17:56 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+CF-RAY: 9c548ca4faae97ed-EWR
+X-Backside-Transport: OK OK
+X-Global-Transaction-ID: 2c2a31e4697aa734827ab573
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID,Access-Control-Allow-Origin,Access-Control-Allow-Credentials
+cf-cache-status: DYNAMIC
+Set-Cookie: __cf_bm=_pSijD4WA4XX5tg4IxYqW3czwEC317HCvzdWgNjImGc-1769645876-1.0.1.1-oHsfJpfq2AmzB3H8Y3dn8O2aFwQKE.sPh4Owdi3rL5HS1DXbg9QoVkH9z78.lR.fQkkirdHsGQwLrurjHTLE1fBLXcktLAs9l3RzS1I_26E; path=/; expires=Thu, 29-Jan-26 00:47:56 GMT; domain=.mercantilbanco.com; HttpOnly; Secure
+Set-Cookie: _cfuvid=CaT2L9erFhodFRFdMyDRitBg4onhjJfd_X2pmzxPJHc-1769645876125-0.0.1.1-604800000; path=/; domain=.mercantilbanco.com; HttpOnly; Secure; SameSite=None
+Server: cloudflare
+alt-svc: h3=":443"; ma=86400
+
+
+[28-Jan-2026 20:17:56 America/Caracas] Body: {"merchant_identify":{"integratorId":31,"merchantId":200284,"terminalId":"Farmamar"},"transaction_list":[{"trx_date":"2026-01-02","trx_type":"vuelto","authorization_code":"025512","payment_reference":48310025512,"invoice_number":"96497980","payment_method":"p2p","origin_mobile_number":"jDOZg4a3DGaw/1Pvq+pF0A==","destination_mobile_number":"fLIajK1Slvz878y13gQOoA==","destination_id":"KNtWibVyfrZY8+XOKgDPRw==","currency":"ves","amount":68,"destination_bank_id":105}]}
+[28-Jan-2026 20:22:51 America/Caracas] HTTP Code: 200
+[28-Jan-2026 20:22:51 America/Caracas] Headers: HTTP/1.1 200 OK
+Date: Thu, 29 Jan 2026 00:22:51 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+CF-RAY: 9c5493d8493a5564-EWR
+X-Backside-Transport: OK OK
+X-Global-Transaction-ID: c2c1944d697aa85a5dfc5191
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID,Access-Control-Allow-Origin,Access-Control-Allow-Credentials
+cf-cache-status: DYNAMIC
+Set-Cookie: __cf_bm=RqupriM2Ua1lQwKBFhL.NYPrxiBVj1jK8HblfngXvLA-1769646171-1.0.1.1-l0tCVpm3mtAwkJj1Jzggv2U9CkzLEbL6DX7dpPdw6chhdrXBUYZtOzaMivtBD2AIRW4G8SOC9u1pbT3sOhGM8I5jwbhasLvIx_79g55pm4o; path=/; expires=Thu, 29-Jan-26 00:52:51 GMT; domain=.mercantilbanco.com; HttpOnly; Secure
+Set-Cookie: _cfuvid=Aro1wIJiV76FIe2QT909z.6h0vzfBRsY4N5EFWmgkW8-1769646171043-0.0.1.1-604800000; path=/; domain=.mercantilbanco.com; HttpOnly; Secure; SameSite=None
+Server: cloudflare
+alt-svc: h3=":443"; ma=86400
+
+
+[28-Jan-2026 20:22:51 America/Caracas] Body: {"merchant_identify":{"integratorId":31,"merchantId":200284,"terminalId":"Farmamar"},"transaction_list":[{"trx_date":"2026-01-02","trx_type":"vuelto","authorization_code":"025512","payment_reference":48310025512,"invoice_number":"96497980","payment_method":"p2p","origin_mobile_number":"jDOZg4a3DGaw/1Pvq+pF0A==","destination_mobile_number":"fLIajK1Slvz878y13gQOoA==","destination_id":"KNtWibVyfrZY8+XOKgDPRw==","currency":"ves","amount":68,"destination_bank_id":105}]}
+[28-Jan-2026 20:24:51 America/Caracas] HTTP Code: 200
+[28-Jan-2026 20:24:51 America/Caracas] Headers: HTTP/1.1 200 OK
+Date: Thu, 29 Jan 2026 00:24:51 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+CF-RAY: 9c5496c839848c3b-EWR
+X-Backside-Transport: OK OK
+X-Global-Transaction-ID: 2c2a31e4697aa8d3998e903d
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID,Access-Control-Allow-Origin,Access-Control-Allow-Credentials
+cf-cache-status: DYNAMIC
+Set-Cookie: __cf_bm=BMr6Ex8bgFqGuxQFyoAqpwm2R1HVPNIYkrAqIEg4qao-1769646291-1.0.1.1-zRQhz0isKdkxyO2MjzRWN2pHHH8MGEj00zdqSwj42BJ52jjJ2.x9aGRtO4cvndfSEKpRlbBgyXBu.FczyJEMPpAl.Tp4TcusZHqPhXiJx6Q; path=/; expires=Thu, 29-Jan-26 00:54:51 GMT; domain=.mercantilbanco.com; HttpOnly; Secure
+Set-Cookie: _cfuvid=0c4t4kn0z9hcZGTllwa7S5wXHr7rAlg_ctswEZdxcr4-1769646291384-0.0.1.1-604800000; path=/; domain=.mercantilbanco.com; HttpOnly; Secure; SameSite=None
+Server: cloudflare
+alt-svc: h3=":443"; ma=86400
+
+
+[28-Jan-2026 20:24:51 America/Caracas] Body: {"merchant_identify":{"integratorId":31,"merchantId":200284,"terminalId":"Farmamar"},"transaction_list":[{"trx_date":"2026-01-02","trx_type":"vuelto","authorization_code":"025512","payment_reference":48310025512,"invoice_number":"96497980","payment_method":"p2p","origin_mobile_number":"jDOZg4a3DGaw/1Pvq+pF0A==","destination_mobile_number":"fLIajK1Slvz878y13gQOoA==","destination_id":"KNtWibVyfrZY8+XOKgDPRw==","currency":"ves","amount":68,"destination_bank_id":105}]}
+[28-Jan-2026 20:26:13 America/Caracas] HTTP Code: 200
+[28-Jan-2026 20:26:13 America/Caracas] Headers: HTTP/1.1 200 OK
+Date: Thu, 29 Jan 2026 00:26:12 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+CF-RAY: 9c5498c68fe3f4bf-EWR
+X-Backside-Transport: OK OK
+X-Global-Transaction-ID: c2c1944d697aa92412cdb8df
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID,Access-Control-Allow-Origin,Access-Control-Allow-Credentials
+cf-cache-status: DYNAMIC
+Set-Cookie: __cf_bm=pYl49Ppj7_vC0MTr0YAqVr5fLn9OC7QTmXFhaGFnAqc-1769646372-1.0.1.1-c73_qokbdwxEyGS.berrqBW7_KAeIyqm5hkGZzd9h78JiGa04W.BidICV6wxrrB.IHpQebKfYxnpDMVu_sBxwplVG17oQ0RsZULlrC7sSEk; path=/; expires=Thu, 29-Jan-26 00:56:12 GMT; domain=.mercantilbanco.com; HttpOnly; Secure
+Set-Cookie: _cfuvid=WgARTxHUQChndjIyNU5n3OnJifkW1LuyCIUY7_LyP_8-1769646372999-0.0.1.1-604800000; path=/; domain=.mercantilbanco.com; HttpOnly; Secure; SameSite=None
+Server: cloudflare
+alt-svc: h3=":443"; ma=86400
+
+
+[28-Jan-2026 20:26:13 America/Caracas] Body: {"merchant_identify":{"integratorId":31,"merchantId":200284,"terminalId":"Farmamar"},"transaction_list":[{"trx_date":"2026-01-02","trx_type":"vuelto","authorization_code":"025512","payment_reference":48310025512,"invoice_number":"96497980","payment_method":"p2p","origin_mobile_number":"jDOZg4a3DGaw/1Pvq+pF0A==","destination_mobile_number":"fLIajK1Slvz878y13gQOoA==","destination_id":"KNtWibVyfrZY8+XOKgDPRw==","currency":"ves","amount":68,"destination_bank_id":105}]}
+[28-Jan-2026 20:34:57 America/Caracas] HTTP Code: 200
+[28-Jan-2026 20:34:57 America/Caracas] Headers: HTTP/1.1 200 OK
+Date: Thu, 29 Jan 2026 00:34:56 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+CF-RAY: 9c54a590da8a4382-EWR
+X-Backside-Transport: OK OK
+X-Global-Transaction-ID: 2c2a31e4697aab3099bf3f3d
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID,Access-Control-Allow-Origin,Access-Control-Allow-Credentials
+cf-cache-status: DYNAMIC
+Set-Cookie: __cf_bm=PzQwkOS0AqMvIfnJSKZyWm7kE0MP66KKJ9l5MmFbEBU-1769646896-1.0.1.1-3zHB7eM5yNyNWnEOVR_kwSpfnx2Ao6omYWfPoSu2uneIaeUh.FLRLbuCriBC4j1nC.JHjuLWSEOSLl8Uge8dw7mlvBDJ.YlWRxu3mD4xOzs; path=/; expires=Thu, 29-Jan-26 01:04:56 GMT; domain=.mercantilbanco.com; HttpOnly; Secure
+Set-Cookie: _cfuvid=OV40XstsosLd0huWrw9N_ynvo9AL5eDOmCoYwaJ9L68-1769646896901-0.0.1.1-604800000; path=/; domain=.mercantilbanco.com; HttpOnly; Secure; SameSite=None
+Server: cloudflare
+alt-svc: h3=":443"; ma=86400
+
+
+[28-Jan-2026 20:34:57 America/Caracas] Body: {"merchant_identify":{"integratorId":31,"merchantId":200284,"terminalId":"Farmamar"},"transaction_list":[{"trx_date":"2026-01-02","trx_type":"vuelto","authorization_code":"025512","payment_reference":48310025512,"invoice_number":"96497980","payment_method":"p2p","origin_mobile_number":"jDOZg4a3DGaw/1Pvq+pF0A==","destination_mobile_number":"fLIajK1Slvz878y13gQOoA==","destination_id":"KNtWibVyfrZY8+XOKgDPRw==","currency":"ves","amount":68,"destination_bank_id":105}]}
+[28-Jan-2026 20:43:27 America/Caracas] HTTP Code: 200
+[28-Jan-2026 20:43:27 America/Caracas] Headers: HTTP/1.1 200 OK
+Date: Thu, 29 Jan 2026 00:43:27 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+CF-RAY: 9c54b2092cfc4357-EWR
+X-Backside-Transport: OK OK
+X-Global-Transaction-ID: 2c2a31e4697aad2fc560360f
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID,Access-Control-Allow-Origin,Access-Control-Allow-Credentials
+cf-cache-status: DYNAMIC
+Set-Cookie: __cf_bm=JKsJp8Xw_BOwHKLPcR0U2TtFsIqwgorN9t.pq1JmHYA-1769647407-1.0.1.1-hjmZ_KyRrJIE5983OCt7v2661e7sA1uEhzi25QXO0CkTB89tBqgRpgJfoZfF.sKHrcTKHFHu9S0n8hsB5hD1pcBLeL1kNcFh0UX_rdONPh0; path=/; expires=Thu, 29-Jan-26 01:13:27 GMT; domain=.mercantilbanco.com; HttpOnly; Secure
+Set-Cookie: _cfuvid=UWbTHbyDqDblGk5WYKRAnAFUUM6Xad_jDGKI_6FTXPM-1769647407688-0.0.1.1-604800000; path=/; domain=.mercantilbanco.com; HttpOnly; Secure; SameSite=None
+Server: cloudflare
+alt-svc: h3=":443"; ma=86400
+
+
+[28-Jan-2026 20:43:27 America/Caracas] Body: {"merchant_identify":{"integratorId":31,"merchantId":200284,"terminalId":"Farmamar"},"transaction_list":[{"trx_date":"2026-01-02","trx_type":"vuelto","authorization_code":"025512","payment_reference":48310025512,"invoice_number":"96497980","payment_method":"p2p","origin_mobile_number":"jDOZg4a3DGaw/1Pvq+pF0A==","destination_mobile_number":"fLIajK1Slvz878y13gQOoA==","destination_id":"KNtWibVyfrZY8+XOKgDPRw==","currency":"ves","amount":68,"destination_bank_id":105}]}
+[28-Jan-2026 20:48:41 America/Caracas] HTTP Code: 200
+[28-Jan-2026 20:48:41 America/Caracas] Headers: HTTP/1.1 200 OK
+Date: Thu, 29 Jan 2026 00:48:41 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+CF-RAY: 9c54b9b4df05423d-EWR
+X-Backside-Transport: OK OK
+X-Global-Transaction-ID: 2c2a31e4697aae69c5ccfd9f
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID,Access-Control-Allow-Origin,Access-Control-Allow-Credentials
+cf-cache-status: DYNAMIC
+Set-Cookie: __cf_bm=kbPXCEqLG9sQRCioc.61FQn9uj21kGek.vl_L3aIf0M-1769647721-1.0.1.1-iPeqVEJnLcrHD0msxw91opg1wgMecmRilrXIgPiVXY7.l0wZWz4bDuNf.eV0nIAXlCOyto5TPvHqIHC41xXFhSH3Cl.mePKad0.8viJpu0w; path=/; expires=Thu, 29-Jan-26 01:18:41 GMT; domain=.mercantilbanco.com; HttpOnly; Secure
+Set-Cookie: _cfuvid=qfz1kLr6QhB9cmL8NtjJMR4KQXTs33RXyWBX.sArAHs-1769647721874-0.0.1.1-604800000; path=/; domain=.mercantilbanco.com; HttpOnly; Secure; SameSite=None
+Server: cloudflare
+alt-svc: h3=":443"; ma=86400
+
+
+[28-Jan-2026 20:48:41 America/Caracas] Body: {"merchant_identify":{"integratorId":31,"merchantId":200284,"terminalId":"Farmamar"},"transaction_list":[{"trx_date":"2026-01-02","trx_type":"vuelto","authorization_code":"025512","payment_reference":48310025512,"invoice_number":"96497980","payment_method":"p2p","origin_mobile_number":"jDOZg4a3DGaw/1Pvq+pF0A==","destination_mobile_number":"fLIajK1Slvz878y13gQOoA==","destination_id":"KNtWibVyfrZY8+XOKgDPRw==","currency":"ves","amount":68,"destination_bank_id":105}]}
+[28-Jan-2026 20:52:12 America/Caracas] HTTP Code: 400
+[28-Jan-2026 20:52:12 America/Caracas] Headers: HTTP/1.1 400 Bad Request
+Date: Thu, 29 Jan 2026 00:52:12 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+CF-RAY: 9c54be1bb86ee351-EWR
+X-Backside-Transport: OK OK
+X-Global-Transaction-ID: 2c2a31e4697aaf1ec61d29cf
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID,Access-Control-Allow-Origin,Access-Control-Allow-Credentials
+cf-cache-status: DYNAMIC
+Set-Cookie: __cf_bm=ePLgM9ZKzPjcTRz0S028vw3lZw8pKxC95grvfRCXKHU-1769647932-1.0.1.1-NVhIcf9Rg5sRbHSKtVKXJ0y8XO7_im3l7I8ihCySlzEYwu0rNLgba.Zhk06DHSUQAPJFg2XdJMbOlKcKGLoc6a5_THY._gAcfhOpU_7QeUw; path=/; expires=Thu, 29-Jan-26 01:22:12 GMT; domain=.mercantilbanco.com; HttpOnly; Secure
+Set-Cookie: _cfuvid=4ewBI99zkiKd81oSYJBBln15U1Hg3CevDd0oYFH1qRo-1769647932160-0.0.1.1-604800000; path=/; domain=.mercantilbanco.com; HttpOnly; Secure; SameSite=None
+Server: cloudflare
+alt-svc: h3=":443"; ma=86400
+
+
+[28-Jan-2026 20:52:12 America/Caracas] Body: {"processing_date":"2026-01-28 08:52:12 VET","merchant_identify":{"integratorId":31,"merchantId":200284,"terminalId":"Farmamar"},"error_list":[{"error_code":"9003","description":"Error procesando el servicio MerchantService"},{"error_code":"0049","description":"Codigo de comercio no existe o sus datos son inconsistentes"}]}
+[28-Jan-2026 20:52:45 America/Caracas] HTTP Code: 400
+[28-Jan-2026 20:52:45 America/Caracas] Headers: HTTP/1.1 400 Bad Request
+Date: Thu, 29 Jan 2026 00:52:45 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+CF-RAY: 9c54beea0f24562b-EWR
+X-Backside-Transport: OK OK
+X-Global-Transaction-ID: c2c1944d697aaf3f5e965ea1
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID,Access-Control-Allow-Origin,Access-Control-Allow-Credentials
+cf-cache-status: DYNAMIC
+Set-Cookie: __cf_bm=YWAl03GW7nDBvqIdW3xLRT3fvd0y5ndkWHikS.mSu3c-1769647965-1.0.1.1-MNdlbe628k4S9cHyIKhdm6DATr3PMooMw7wxgCqMeYPe__KJBY44yTva8YMAC8k.yRomM3jpxJwpPuwHGGSbRp318NSEORX2oyjJa7nrWsc; path=/; expires=Thu, 29-Jan-26 01:22:45 GMT; domain=.mercantilbanco.com; HttpOnly; Secure
+Set-Cookie: _cfuvid=zCFtkytn1e3O8ESnScRJQUPlGLmAeAAw3KHIKbGT.ms-1769647965162-0.0.1.1-604800000; path=/; domain=.mercantilbanco.com; HttpOnly; Secure; SameSite=None
+Server: cloudflare
+alt-svc: h3=":443"; ma=86400
+
+
+[28-Jan-2026 20:52:45 America/Caracas] Body: {"processing_date":"2026-01-28 08:52:45 VET","merchant_identify":{"integratorId":31,"merchantId":200284,"terminalId":"Farmamar"},"error_list":[{"error_code":"9003","description":"Error procesando el servicio MerchantService"},{"error_code":"0049","description":"Codigo de comercio no existe o sus datos son inconsistentes"}]}
+[28-Jan-2026 20:54:28 America/Caracas] HTTP Code: 400
+[28-Jan-2026 20:54:28 America/Caracas] Headers: HTTP/1.1 400 Bad Request
+Date: Thu, 29 Jan 2026 00:54:28 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+CF-RAY: 9c54c1720f9d93b6-EWR
+X-Backside-Transport: OK OK
+X-Global-Transaction-ID: 2c2a31e4697aafa6c65664bf
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID,Access-Control-Allow-Origin,Access-Control-Allow-Credentials
+cf-cache-status: DYNAMIC
+Set-Cookie: __cf_bm=ktjmg6w0pIGAe3qOw87hbVhh5gJNcWX_jf01oKZE2_I-1769648068-1.0.1.1-bAYy0MOg4quCgfZlDrwOXahWIoVuJBM4BJZ2mEa99wKBmagGVnIkuoly3B6pJbhu.P3hLn8bStDGT_q1ZMhgR6006Ys1e9RIR4DGF3BV.BI; path=/; expires=Thu, 29-Jan-26 01:24:28 GMT; domain=.mercantilbanco.com; HttpOnly; Secure
+Set-Cookie: _cfuvid=ESEnb9l6V2MArpOz6NoxDq3UhBQxvjas24wFhCJJxnU-1769648068860-0.0.1.1-604800000; path=/; domain=.mercantilbanco.com; HttpOnly; Secure; SameSite=None
+Server: cloudflare
+alt-svc: h3=":443"; ma=86400
+
+
+[28-Jan-2026 20:54:28 America/Caracas] Body: {"processing_date":"2026-01-28 08:54:28 VET","merchant_identify":{"integratorId":31,"merchantId":200284,"terminalId":"Farmamar"},"error_list":[{"error_code":"9003","description":"Error procesando el servicio MerchantService"},{"error_code":"0049","description":"Codigo de comercio no existe o sus datos son inconsistentes"}]}
+[28-Jan-2026 20:59:31 America/Caracas] HTTP Code: 400
+[28-Jan-2026 20:59:31 America/Caracas] Headers: HTTP/1.1 400 Bad Request
+Date: Thu, 29 Jan 2026 00:59:31 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+CF-RAY: 9c54c8d71ce49cc1-EWR
+X-Backside-Transport: OK OK
+X-Global-Transaction-ID: 2c2a31e4697ab0d5c6bdfdef
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID,Access-Control-Allow-Origin,Access-Control-Allow-Credentials
+cf-cache-status: DYNAMIC
+Set-Cookie: __cf_bm=jlJa7JEdMaj6xkbSaXKqf3fOeFtdIm02JhV5ruaR.5Y-1769648371-1.0.1.1-L9NzHFcONHZmu_HQtbT1zWEvPq9hbYoAYJbku.YfGhAleATY1TWk.nKQ61sDYx6qF8nmeDwcjQbdiLMAb7V6yiKmK5m4r1LfZWk3jxfkxdw; path=/; expires=Thu, 29-Jan-26 01:29:31 GMT; domain=.mercantilbanco.com; HttpOnly; Secure
+Set-Cookie: _cfuvid=n1J95FpGwDMLXaYwQB8MBCWGq5VvPBuXm0DkGDbam5E-1769648371730-0.0.1.1-604800000; path=/; domain=.mercantilbanco.com; HttpOnly; Secure; SameSite=None
+Server: cloudflare
+alt-svc: h3=":443"; ma=86400
+
+
+[28-Jan-2026 20:59:31 America/Caracas] Body: {"processing_date":"2026-01-28 08:59:31 VET","merchant_identify":{"integratorId":31,"merchantId":200284,"terminalId":"Farmamar"},"error_list":[{"error_code":"9003","description":"Error procesando el servicio MerchantService"},{"error_code":"0049","description":"Codigo de comercio no existe o sus datos son inconsistentes"}]}
+[28-Jan-2026 21:00:09 America/Caracas] HTTP Code: 400
+[28-Jan-2026 21:00:09 America/Caracas] Headers: HTTP/1.1 400 Bad Request
+Date: Thu, 29 Jan 2026 01:00:09 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+CF-RAY: 9c54c9c16c263e9d-EWR
+X-Backside-Transport: OK OK
+X-Global-Transaction-ID: 2c2a31e4697ab0fb84cec881
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID,Access-Control-Allow-Origin,Access-Control-Allow-Credentials
+cf-cache-status: DYNAMIC
+Set-Cookie: __cf_bm=fpOo7c9N1ATebt2t6GKBouF8YDKXnqrtiWAnAf2vlH4-1769648409-1.0.1.1-mjkx9a4AkrfkdJdVGuAuw.a20UmzppmPNlpyf4WzyPwcJrmWLd9Caccko4u8xPPvl_QMA_bIr.Dstkh.7OxQEaBewPVI55CVA1_RrJl0zy8; path=/; expires=Thu, 29-Jan-26 01:30:09 GMT; domain=.mercantilbanco.com; HttpOnly; Secure
+Set-Cookie: _cfuvid=mClXRYCPUAVkvujVsvtukb00EiKCjN769_HTBKtTbAA-1769648409251-0.0.1.1-604800000; path=/; domain=.mercantilbanco.com; HttpOnly; Secure; SameSite=None
+Server: cloudflare
+alt-svc: h3=":443"; ma=86400
+
+
+[28-Jan-2026 21:00:09 America/Caracas] Body: {"processing_date":"2026-01-28 09:00:09 VET","merchant_identify":{"integratorId":31,"merchantId":200284,"terminalId":"Farmamar"},"error_list":[{"error_code":"9003","description":"Error procesando el servicio MerchantService"},{"error_code":"0049","description":"Codigo de comercio no existe o sus datos son inconsistentes"}]}
+[28-Jan-2026 21:00:39 America/Caracas] HTTP Code: 400
+[28-Jan-2026 21:00:39 America/Caracas] Headers: HTTP/1.1 400 Bad Request
+Date: Thu, 29 Jan 2026 01:00:39 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+CF-RAY: 9c54ca7dfbbd0aae-EWR
+X-Backside-Transport: OK OK
+X-Global-Transaction-ID: 2c2a31e4697ab119c6d2c30f
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID,Access-Control-Allow-Origin,Access-Control-Allow-Credentials
+cf-cache-status: DYNAMIC
+Set-Cookie: __cf_bm=UXNkvz8u2M3DjvFye_33GJF6hN9IJY0sIBHIt9gpHY8-1769648439-1.0.1.1-mwpw5BRiKG6FF_N5a6mOZdqpWGkIT2W2U4sCDsatVwotDkh2kDjBnkzJd.1ZF_JA9oi5ALZtmW59Qn57rvXF2Jo2FB06W0sG9bkT3gBjM0M; path=/; expires=Thu, 29-Jan-26 01:30:39 GMT; domain=.mercantilbanco.com; HttpOnly; Secure
+Set-Cookie: _cfuvid=rV__uRrBTDq1lawmXMs1ehA1MbNib90.VWfZF8vI9k0-1769648439429-0.0.1.1-604800000; path=/; domain=.mercantilbanco.com; HttpOnly; Secure; SameSite=None
+Server: cloudflare
+alt-svc: h3=":443"; ma=86400
+
+
+[28-Jan-2026 21:00:39 America/Caracas] Body: {"processing_date":"2026-01-28 09:00:39 VET","merchant_identify":{"integratorId":31,"merchantId":200284,"terminalId":"Farmamar"},"error_list":[{"error_code":"9003","description":"Error procesando el servicio MerchantService"},{"error_code":"0049","description":"Codigo de comercio no existe o sus datos son inconsistentes"}]}
+[28-Jan-2026 21:21:23 America/Caracas] HTTP Code: 400
+[28-Jan-2026 21:21:23 America/Caracas] Headers: HTTP/1.1 400 Bad Request
+Date: Thu, 29 Jan 2026 01:21:23 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+CF-RAY: 9c54e997f9e1983e-EWR
+X-Backside-Transport: OK OK
+X-Global-Transaction-ID: c2c1944d697ab6131739eecf
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID,Access-Control-Allow-Origin,Access-Control-Allow-Credentials
+cf-cache-status: DYNAMIC
+Set-Cookie: __cf_bm=hHRv0Hm9zwmraNroj8Fw82xfNKyGRH.odrjH0iuJ8VA-1769649683-1.0.1.1-9LkcZxkcqI7NLqPpKN6zUViCnY6utyyURauvTLL.j_ukIzJz1Lw0PvoK3bvNbrvzQ9Q79ha1vGWqos1zRSAv82N57vagya98hxKGveZ.HS8; path=/; expires=Thu, 29-Jan-26 01:51:23 GMT; domain=.mercantilbanco.com; HttpOnly; Secure
+Set-Cookie: _cfuvid=njG4aDxgFWdDWb5Tk33EQpgG.03XVqtix_TuQ7eiN08-1769649683580-0.0.1.1-604800000; path=/; domain=.mercantilbanco.com; HttpOnly; Secure; SameSite=None
+Server: cloudflare
+alt-svc: h3=":443"; ma=86400
+
+
+[28-Jan-2026 21:21:23 America/Caracas] Body: {"processing_date":"2026-01-28 09:21:23 VET","merchant_identify":{"integratorId":31,"merchantId":200284,"terminalId":"Farmamar"},"error_list":[{"error_code":"9003","description":"Error procesando el servicio MerchantService"},{"error_code":"0049","description":"Codigo de comercio no existe o sus datos son inconsistentes"}]}
+[28-Jan-2026 21:33:57 America/Caracas] HTTP Code: 400
+[28-Jan-2026 21:33:57 America/Caracas] Headers: HTTP/1.1 400 Bad Request
+Date: Thu, 29 Jan 2026 01:33:57 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+CF-RAY: 9c54fbfefd2b41fb-EWR
+X-Backside-Transport: OK OK
+X-Global-Transaction-ID: c2c1944d697ab9055f6620a1
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID,Access-Control-Allow-Origin,Access-Control-Allow-Credentials
+cf-cache-status: DYNAMIC
+Set-Cookie: __cf_bm=ZVJxFlqagRnCqdln3aPcEQgCnZK6MQPemiX1C5aUtXw-1769650437-1.0.1.1-4h77_1speq8Yl3fdmTYn0wx1cJf9IJa_fqDPveq3srtchQul4RyxwZXQeUIwjnLrF4DRj1c4ZiWw.tTgf0p34GrvYwZvf80XM6jcuBoN1cw; path=/; expires=Thu, 29-Jan-26 02:03:57 GMT; domain=.mercantilbanco.com; HttpOnly; Secure
+Set-Cookie: _cfuvid=yHhH0GKcikjusNnGDuIzwipJsypUa4btKyxLbVhjNnU-1769650437079-0.0.1.1-604800000; path=/; domain=.mercantilbanco.com; HttpOnly; Secure; SameSite=None
+Server: cloudflare
+alt-svc: h3=":443"; ma=86400
+
+
+[28-Jan-2026 21:33:57 America/Caracas] Body: {"processing_date":"2026-01-28 09:33:57 VET","merchant_identify":{"integratorId":31,"merchantId":200284,"terminalId":"Farmamar"},"error_list":[{"error_code":"9003","description":"Error procesando el servicio MerchantService"},{"error_code":"0049","description":"Codigo de comercio no existe o sus datos son inconsistentes"}]}
+[28-Jan-2026 21:34:15 America/Caracas] HTTP Code: 400
+[28-Jan-2026 21:34:15 America/Caracas] Headers: HTTP/1.1 400 Bad Request
+Date: Thu, 29 Jan 2026 01:34:15 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+CF-RAY: 9c54fc6eea16b9c6-EWR
+X-Backside-Transport: OK OK
+X-Global-Transaction-ID: c2c1944d697ab917181ff8df
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID,Access-Control-Allow-Origin,Access-Control-Allow-Credentials
+cf-cache-status: DYNAMIC
+Set-Cookie: __cf_bm=WINOHRABB8.6HkxB1UNVJkYkgYigns_RQVEYNPoezGY-1769650455-1.0.1.1-H9s6b2Spcs6rQ.tCTd4jEK6looV4RVovt6sQt4zeGm0WG7CBeAvTgQ5p5WwTCY9hO4VbF0eDCtwEIVjblnyAUnhBv5vteBWCq_vrsN_WkhQ; path=/; expires=Thu, 29-Jan-26 02:04:15 GMT; domain=.mercantilbanco.com; HttpOnly; Secure
+Set-Cookie: _cfuvid=pDNMY25fzrel.HhQitIoaf2ayB2nVYL4cvozQGAmLWE-1769650455157-0.0.1.1-604800000; path=/; domain=.mercantilbanco.com; HttpOnly; Secure; SameSite=None
+Server: cloudflare
+alt-svc: h3=":443"; ma=86400
+
+
+[28-Jan-2026 21:34:15 America/Caracas] Body: {"processing_date":"2026-01-28 09:34:15 VET","merchant_identify":{"integratorId":31,"merchantId":200284,"terminalId":"Farmamar"},"error_list":[{"error_code":"9003","description":"Error procesando el servicio MerchantService"},{"error_code":"0049","description":"Codigo de comercio no existe o sus datos son inconsistentes"}]}
+[29-Jan-2026 08:25:18 America/Caracas] HTTP Code: 200
+[29-Jan-2026 08:25:18 America/Caracas] Headers: HTTP/1.1 200 OK
+Date: Thu, 29 Jan 2026 12:25:18 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+CF-RAY: 9c58b623bbbf066b-EWR
+X-Backside-Transport: OK OK
+X-Global-Transaction-ID: 2c2a31e4697b51ae8e683d61
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID,Access-Control-Allow-Origin,Access-Control-Allow-Credentials
+cf-cache-status: DYNAMIC
+Set-Cookie: __cf_bm=u5tjKit75YqgtArF1.lwv_bOAYnxueHteKTgR1LU3Kc-1769689518-1.0.1.1-FKdM5NqLW4RrJ_QSnZaS_waDdjwEeCd0qcSnsFSMlNp4B15CV.rT6PWaHSElzkyBY1FX4IztWGBR7awx1Fad3OppWigHdBwOQfNxdGhlUlU; path=/; expires=Thu, 29-Jan-26 12:55:18 GMT; domain=.mercantilbanco.com; HttpOnly; Secure
+Set-Cookie: _cfuvid=0UQxjDpzpIF7svxl.Jab9UV5ak2_ywuClJm8oRws5iM-1769689518803-0.0.1.1-604800000; path=/; domain=.mercantilbanco.com; HttpOnly; Secure; SameSite=None
+Server: cloudflare
+alt-svc: h3=":443"; ma=86400
+
+
+[29-Jan-2026 08:25:18 America/Caracas] Body: {"merchant_identify":{"integratorId":31,"merchantId":200284,"terminalId":"Farmamar"},"transaction_list":[{"trx_date":"2026-01-02","trx_type":"compra","authorization_code":"013964","payment_reference":87860013964,"invoice_number":"43884166","payment_method":"c2p","origin_mobile_number":"jDOZg4a3DGaw/1Pvq+pF0A==","destination_mobile_number":"fLIajK1Slvz878y13gQOoA==","destination_id":"KNtWibVyfrZY8+XOKgDPRw==","currency":"ves","amount":81,"destination_bank_id":105}]}
+[29-Jan-2026 08:28:27 America/Caracas] HTTP Code: 200
+[29-Jan-2026 08:28:27 America/Caracas] Headers: HTTP/1.1 200 OK
+Date: Thu, 29 Jan 2026 12:28:27 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+CF-RAY: 9c58babe8c6b729f-EWR
+X-Backside-Transport: OK OK
+X-Global-Transaction-ID: c2c1944d697b526b367f99bf
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID,Access-Control-Allow-Origin,Access-Control-Allow-Credentials
+cf-cache-status: DYNAMIC
+Set-Cookie: __cf_bm=JAG297bUqnBNkzzRvfcDryqfzHR9jgnkjZ3lEJ0vYqg-1769689707-1.0.1.1-AGQ6ne8NPSlKqBS1t.RFmNO837PrPB6Qaaq30jTqdtJ3_VPXZ.wOZrCxDwoVbCe.6mjT.mE9PpxoB3rGZmgKx3r6htvfDW6_fhOSd829VEU; path=/; expires=Thu, 29-Jan-26 12:58:27 GMT; domain=.mercantilbanco.com; HttpOnly; Secure
+Set-Cookie: _cfuvid=p4lC_6.QJ3mlgiizVEl7vrB3dghy.jgxKlsXAaClqIw-1769689707401-0.0.1.1-604800000; path=/; domain=.mercantilbanco.com; HttpOnly; Secure; SameSite=None
+Server: cloudflare
+alt-svc: h3=":443"; ma=86400
+
+
+[29-Jan-2026 08:28:27 America/Caracas] Body: {"merchant_identify":{"integratorId":31,"merchantId":200284,"terminalId":"Farmamar"},"transaction_list":[{"trx_date":"2026-01-02","trx_type":"compra","authorization_code":"013964","payment_reference":87860013964,"invoice_number":"43884166","payment_method":"c2p","origin_mobile_number":"jDOZg4a3DGaw/1Pvq+pF0A==","destination_mobile_number":"fLIajK1Slvz878y13gQOoA==","destination_id":"KNtWibVyfrZY8+XOKgDPRw==","currency":"ves","amount":81,"destination_bank_id":105}]}
+[29-Jan-2026 09:50:43 America/Caracas] HTTP Code: 200
+[29-Jan-2026 09:50:43 America/Caracas] Headers: HTTP/1.1 200 OK
+Date: Thu, 29 Jan 2026 13:50:43 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+CF-RAY: 9c593340fc9178df-EWR
+X-Backside-Transport: OK OK
+X-Global-Transaction-ID: c2c1944d697b65b33e565c0f
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID,Access-Control-Allow-Origin,Access-Control-Allow-Credentials
+cf-cache-status: DYNAMIC
+Set-Cookie: __cf_bm=B3jag51i0x1.B0cr7qkyBH5ng5FZ0ceUT049F7CRzOI-1769694643-1.0.1.1-eBJ8lHMHoo3p6mgOfAgAaqEOXT.l5M19vXzR1011rWhroeB3kk_qvll0piEBb_PHMuppI2t0SYoTsf0H2m_1oYw.l8QmcLQ9fN.gpLwInLI; path=/; expires=Thu, 29-Jan-26 14:20:43 GMT; domain=.mercantilbanco.com; HttpOnly; Secure
+Set-Cookie: _cfuvid=.hmVR4f8cOC.TwMeGgGzVgcYzPLgd1uMvx2_RgMUE5E-1769694643479-0.0.1.1-604800000; path=/; domain=.mercantilbanco.com; HttpOnly; Secure; SameSite=None
+Server: cloudflare
+alt-svc: h3=":443"; ma=86400
+
+
+[29-Jan-2026 09:50:43 America/Caracas] Body: {"merchant_identify":{"integratorId":31,"merchantId":200284,"terminalId":"Farmamar"},"transaction_list":[{"trx_date":"2026-01-02","trx_type":"compra","authorization_code":"013964","payment_reference":87860013964,"invoice_number":"43884166","payment_method":"c2p","origin_mobile_number":"jDOZg4a3DGaw/1Pvq+pF0A==","destination_mobile_number":"fLIajK1Slvz878y13gQOoA==","destination_id":"KNtWibVyfrZY8+XOKgDPRw==","currency":"ves","amount":81,"destination_bank_id":105}]}
+[29-Jan-2026 09:50:43 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on int in /home2/atlasori/public_html/farmamar/includes/payment_handler.php:128
+Stack trace:
+#0 /home2/atlasori/public_html/farmamar/public/dashboard.php(34): saveVerifiedTransaction(1, 'SYSADMIN', Array, Array, Array)
+#1 {main}
+  thrown in /home2/atlasori/public_html/farmamar/includes/payment_handler.php on line 128
+[29-Jan-2026 09:50:54 America/Caracas] HTTP Code: 200
+[29-Jan-2026 09:50:54 America/Caracas] Headers: HTTP/1.1 200 OK
+Date: Thu, 29 Jan 2026 13:50:54 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+CF-RAY: 9c5933851a5743ad-EWR
+X-Backside-Transport: OK OK
+X-Global-Transaction-ID: c2c1944d697b65be92299603
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID,Access-Control-Allow-Origin,Access-Control-Allow-Credentials
+cf-cache-status: DYNAMIC
+Set-Cookie: __cf_bm=GvHA3Adq9d5ZNB6.9tG6XMmWX4yVPqz6ZdPDaZqZhII-1769694654-1.0.1.1-JLbi1Uo7krKHwErlImA8jqmUviudRnvHRNV6CfQsYzGH101YGZXgzlVBvcTr65TZ.EV6nU55V_tS.3fkbH4mdUzN6TkAXuj_cTeR2G6fkD0; path=/; expires=Thu, 29-Jan-26 14:20:54 GMT; domain=.mercantilbanco.com; HttpOnly; Secure
+Set-Cookie: _cfuvid=9fXetucOmxYstuF.gk30bLQq0HyaP8A7JSOcIfhFew8-1769694654388-0.0.1.1-604800000; path=/; domain=.mercantilbanco.com; HttpOnly; Secure; SameSite=None
+Server: cloudflare
+alt-svc: h3=":443"; ma=86400
+
+
+[29-Jan-2026 09:50:54 America/Caracas] Body: {"merchant_identify":{"integratorId":31,"merchantId":200284,"terminalId":"Farmamar"},"transaction_list":[{"trx_date":"2026-01-02","trx_type":"compra","authorization_code":"013964","payment_reference":87860013964,"invoice_number":"43884166","payment_method":"c2p","origin_mobile_number":"jDOZg4a3DGaw/1Pvq+pF0A==","destination_mobile_number":"fLIajK1Slvz878y13gQOoA==","destination_id":"KNtWibVyfrZY8+XOKgDPRw==","currency":"ves","amount":81,"destination_bank_id":105}]}
+[29-Jan-2026 09:50:54 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on int in /home2/atlasori/public_html/farmamar/includes/payment_handler.php:128
+Stack trace:
+#0 /home2/atlasori/public_html/farmamar/public/dashboard.php(34): saveVerifiedTransaction(1, 'SYSADMIN', Array, Array, Array)
+#1 {main}
+  thrown in /home2/atlasori/public_html/farmamar/includes/payment_handler.php on line 128
+[29-Jan-2026 09:51:58 America/Caracas] HTTP Code: 200
+[29-Jan-2026 09:51:58 America/Caracas] Headers: HTTP/1.1 200 OK
+Date: Thu, 29 Jan 2026 13:51:58 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+CF-RAY: 9c593514a9263f3b-EWR
+X-Backside-Transport: OK OK
+X-Global-Transaction-ID: 2c2a31e4697b65feeede8dff
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID,Access-Control-Allow-Origin,Access-Control-Allow-Credentials
+cf-cache-status: DYNAMIC
+Set-Cookie: __cf_bm=7To.5KIw7JI.U1YDzVwQiHEMs2wZe.e1IzNRDbAZv4Y-1769694718-1.0.1.1-Tgwb06HCCfpAew4XhvexIEhj59bfi5qdTgC3mURemII0tzSSIFb86bAd3vJzhdcJd8aK4y0w0h.y3t31sklosRR6yNWFsBsguEhk_qcsB2k; path=/; expires=Thu, 29-Jan-26 14:21:58 GMT; domain=.mercantilbanco.com; HttpOnly; Secure
+Set-Cookie: _cfuvid=cdsSgPP3amMZis5P4pHaR.RYGFdG0QmbPKzBK9No54Y-1769694718293-0.0.1.1-604800000; path=/; domain=.mercantilbanco.com; HttpOnly; Secure; SameSite=None
+Server: cloudflare
+alt-svc: h3=":443"; ma=86400
+
+
+[29-Jan-2026 09:51:58 America/Caracas] Body: {"merchant_identify":{"integratorId":31,"merchantId":200284,"terminalId":"Farmamar"},"transaction_list":[{"trx_date":"2026-01-02","trx_type":"compra","authorization_code":"013964","payment_reference":87860013964,"invoice_number":"43884166","payment_method":"c2p","origin_mobile_number":"jDOZg4a3DGaw/1Pvq+pF0A==","destination_mobile_number":"fLIajK1Slvz878y13gQOoA==","destination_id":"KNtWibVyfrZY8+XOKgDPRw==","currency":"ves","amount":81,"destination_bank_id":105}]}
